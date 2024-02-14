@@ -119,23 +119,23 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = os.environ.get('STATIC_URL')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = os.environ.get('DEFAULT_AUTO_FIELD')
 
 
 #the url to go for after logging in 
-LOGIN_REDIRECT_URL='Food:index'
+LOGIN_REDIRECT_URL= os.environ.get('LOGIN_REDIRECT_URL')
 
 #the url to go for after logging out 
-LOGOUT_REDIRECT_URL='Food:index'
+LOGOUT_REDIRECT_URL=os.environ.get('LOGOUT_REDIRECT_URL')
 
 #the url to go for after he is restricted from accessing the profile
-LOGIN_URL='login'
+LOGIN_URL=os.environ.get('LOGIN_URL')
 
 #to set a new derictory and url for the uploaded profile images 
 MEDIA_ROOT=os.path.join(BASE_DIR,'pictures')
-MEDIA_URL='/pictures/'
+MEDIA_URL=os.environ.get('MEDIA_URL')
