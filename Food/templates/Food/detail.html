@@ -1,0 +1,33 @@
+{% extends 'Food/header.html' %}
+
+
+{% block body %}
+
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-6">
+            <img src="{{item.item_img}}" class="card" width="320px"/>
+        </div>
+
+
+        <div class="col-md-6">
+            <h1>{{object.item_name}}</h1>
+            <h2>{{object.item_desc}}</h2>
+            <h3 style="color: red;">{{object.item_price}}$</h3>
+            <a href="{% url 'Food:delete_item' item.id %}" class="btn btn-danger">Delete</a>
+            <a href="{% url 'Food:edit_item' item.id %}" class="btn btn-success">Edit</a>
+        </div>
+
+        
+        
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}
